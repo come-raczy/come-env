@@ -1,4 +1,4 @@
-# dev-environment-files
+# Come's Environment
 All the files to configure my dev environment
 
 Inspiration from other sources:
