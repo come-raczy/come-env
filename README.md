@@ -1,11 +1,12 @@
 # Come's Environment
+
 All the files to configure my dev environment
 
 Inspiration from other sources:
 
 - [Josean Martinez dev environment files](https://github.com/josean-dev/dev-environment-files)
 
-Best used with [GNU Stow](https://www.gnu.org/software/stow/). After installing 'stow', run 
+Best used with [GNU Stow](https://www.gnu.org/software/stow/). After installing 'stow', run
 the following commands from this directory:
 
     stow -t $HOME tmux
@@ -23,7 +24,7 @@ to the OS:
 Once the fonts are installed, select a Nerd Font for the terminal, according to the OS and terminal:
 
 - Windows Terminal: 'Ctrl,' to open settings, select the profile (e.g. 'Ubuntu' under the hamburger menu on the left), then
-'Additional settings' > 'Appearence' > 'Font face' to select the desired font (e.g. 'JetBrainsMone Nerd Font Mono').
+  'Additional settings' > 'Appearence' > 'Font face' to select the desired font (e.g. 'JetBrainsMone Nerd Font Mono').
 
 # Terninal
 
@@ -32,7 +33,23 @@ Install [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm):
 
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-After starting tmux, press 'prefix I' to *I*nstall plugins, 'prefix u' to *u*pdate plugins, and 'prefix alt u' to 
+After starting tmux, press 'prefix I' to *I*nstall plugins, 'prefix u' to *u*pdate plugins, and 'prefix alt u' to
 *u*ninstall plugins.
 
 # Neovim
+
+## Opening a browser on WSL2
+
+The simplest is to instal 'wsl-open':
+
+    sudo npm install -g wsl-open
+
+In Vanilla neovim, simply set 'g:netrw_http_cmd':
+
+    :let g:netrw_http_cmd='wsl-open'
+
+Then the command 'gx', in normal mode, should open a browser on windows.
+
+However, the 'telescope' plugin prevents the loading of 'netrw' and another solution is required.
+The plugin "xiyaowong/link-visitor.nvim" offers this functionality, and the "link-visitor.lua" loads
+the plugin with Lazy, and configures it to bind the "link_under_cursor" function to "<leader>gx".
