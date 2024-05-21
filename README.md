@@ -12,6 +12,20 @@ the following commands from this directory:
     stow -t $HOME tmux
     stow -t $HOME nvim
 
+# Prerequisites
+
+In order to silent all the warnings from masson, install additional language support:
+
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+    sudo apt install golang composer php luarocks ruby-dev  default-jdk ripgrep fd-find
+    sudo gem install neovim
+    sudo npm install -g neovim
+    sudo snap install julia --classic
+    # assuming active venv in $HOME/venv
+    pip install neovim
+
+Start `nvim` and run `:checkhealth`.
+
 # Fonts
 
 Install some Nerd Fonts. For instance, go to [ryanoasis/nerd-fonts releases page](https://github.com/ryanoasis/nerd-fonts/releases),
