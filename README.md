@@ -1,14 +1,27 @@
 # Come's Environment
 
-All the files to configure my dev environment
+All the files to configure [tmux](https://github.com/tmux/tmux/wiki) and [Neovim](https://neovim.io/)
+for a mouse-free development environment. [Douglas Engelbart](https://www.britannica.com/biography/Douglas-Engelbart)'s award
+winning invention shines in so many othe places that we must remember that [Christopher Shole](https://www.invent.org/inductees/christopher-sholes)'s
+finest invention had modern developers in mind - untyped writers and mypy denyer can go back to their mouse-infested world.
+
+This configuration does provide all the VS Code functionalities that I am aware of (that's a small subset as I am not a specialist). If there
+are important ones that are missing (clicking around doesn't count), I'd be really happy to know.
 
 Inspiration from other sources:
 
+- [Kickstart](https://github.com/nvim-lua/kickstart.nvim) and [The Only Video You Need to Get Started with Neovim](https://www.youtube.com/watch?v=m8C0Cq9Uv9o) from [TJ DeVries](https://www.youtube.com/@teej_dv)
 - [Josean Martinez dev environment files](https://github.com/josean-dev/dev-environment-files)
 
 Best used with [GNU Stow](https://www.gnu.org/software/stow/). After installing 'stow', run
 the following commands from this directory:
 
+    UNSTOW="$HOME/unstow"
+    TMUX_CONF="$HOME/.tmux.conf"
+    NVIM_CONF="$HOME/.config/nvim"
+    [[ -d "$UNSTOW" ]] || mkdir -p "$UNSTOW"
+    [[ -f "$TMUX_CONF" ]] && mv "$TMUX_CONF" "$UNSTOW"
+    [[ -d "$NVIM_CONF" ]] && mv "$NVIM_CONF" "$UNSTOW"
     stow -t $HOME tmux
     stow -t $HOME nvim
 
@@ -70,10 +83,18 @@ the plugin with Lazy, and configures it to bind the "link_under_cursor" function
 
 ## Copy/Paste WSL/tmux/neovim
 
-The solution used here:
+The solution used here is to explicitly link the '"' register to 'clip.exe':
+
+    vim.fn.system('clip.exe', vim.fn.getreg('"')):
+
+The limitation is that 'Ctrl-C' doesn't work for copy-paste at the moment.
+
+The previous attempt was to:
 
 - using 'tmux-plugins/tmux-yank' to allow yanking with the mouse to the clipboard
 - disabling the mouse in neovim (`vim.o.mouse=""`)
+
+But that didn't work with line numbering and such.
 
 There aro other solutions, for instance, putting `win32yank.exe` in the `$PATH` and explicitly configuring
 tmux to use it (neovim is supposed to detect it automatically).
