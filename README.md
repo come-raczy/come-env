@@ -26,7 +26,7 @@ Once the fonts are installed, select a Nerd Font for the terminal, according to 
 - Windows Terminal: 'Ctrl,' to open settings, select the profile (e.g. 'Ubuntu' under the hamburger menu on the left), then
   'Additional settings' > 'Appearence' > 'Font face' to select the desired font (e.g. 'JetBrainsMone Nerd Font Mono').
 
-# Terninal
+# Terminal
 
 Install tmux.
 Install [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm):
@@ -53,3 +53,13 @@ Then the command 'gx', in normal mode, should open a browser on windows.
 However, the 'telescope' plugin prevents the loading of 'netrw' and another solution is required.
 The plugin "xiyaowong/link-visitor.nvim" offers this functionality, and the "link-visitor.lua" loads
 the plugin with Lazy, and configures it to bind the "link_under_cursor" function to "<leader>gx".
+
+## Copy/Paste WSL/tmux/neovim
+
+The solution used here:
+
+- using 'tmux-plugins/tmux-yank' to allow yanking with the mouse to the clipboard
+- disabling the mouse in neovim (`vim.o.mouse=""`)
+
+There aro other solutions, for instance, putting `win32yank.exe` in the `$PATH` and explicitly configuring
+tmux to use it (neovim is supposed to detect it automatically).
