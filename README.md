@@ -30,7 +30,7 @@ the following commands from this directory:
 In order to silent all the warnings from masson, install additional language support:
 
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-    sudo apt install golang composer php luarocks ruby-dev  default-jdk ripgrep fd-find
+    sudo apt install golang composer php luarocks ruby-dev  default-jdk ripgrep fd-find npm tree-sitter-cli cargo
     sudo gem install neovim
     sudo npm install -g neovim tree-sitter-cli
     sudo snap install julia --classic

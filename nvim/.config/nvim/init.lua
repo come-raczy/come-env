@@ -107,7 +107,7 @@ vim.opt.relativenumber = true
 vim.opt.wrap = false
 
 -- Enable mouse mode, can be useful for resizing splits for example!
-vim.opt.mouse = ""
+vim.opt.mouse = "a"
 
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
@@ -1050,4 +1050,3 @@ require("lazy").setup({
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
-
