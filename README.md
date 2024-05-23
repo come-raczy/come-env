@@ -98,3 +98,89 @@ But that didn't work with line numbering and such.
 
 There aro other solutions, for instance, putting `win32yank.exe` in the `$PATH` and explicitly configuring
 tmux to use it (neovim is supposed to detect it automatically).
+
+# Pretty printer
+
+## Svelte
+
+This requires adding several languages: svelte, typescript, css, scss, and html. All can be done with `:TSInstall <language>` or in the treesitter configuration.
+
+
+# Language servers
+
+## lua-language-server
+
+With ChadNv, there is a need to install a language server for lua. The steps are:
+
+- Download the pre-built tarball from the [lua-language-server Releases Page](https://github.com/LuaLS/lua-language-server/releases)
+- create the directory for all the files (bin, scripts, etc)
+- untar into this newly-created directory
+- add the newly-created bin directory to the PATH
+
+Note that the `bin/lua-language-server` could be copied to another bin directory, but this rerquires
+copying the `bin/main.lua` as well, and editing it to specify the root of the lua-language-server install.
+
+## svelte-language-server
+
+Can be installed with npm:
+
+    sudo npm install -g svelte-language-server
+
+# NvChad
+
+Starts with the usual `~/.config/nvim/init.lua`, that bootstraps `lazy` if it can't find:
+
+    #  vim.fn.stdpath("data") is $HOME/.local/share/nvim
+    lazypath = vim.fn.stdpath("data") .. '/lazy/lazy.nvim' 
+
+The bootstrapping is done by cloning the github repo 'folke/lazi.nvim.git' into `lazypath`. This path is then prepended 
+to vim runtimepath (`vim.opt.rtp`, type `:set rtp` to see the value).
+With 'lazy' installed, the plugins are loaded within a `require("lazy").setup({...})`. First, loads
+'NvChad/NvChad' (which itself imports 'nvchad.plugins'), then imports 'plugins'.
+Lazy installs 'NvChad' in `NVCHAD=$HOME/.local/share/nvim/lazy/NvChad/` and the plugins are in 
+`$NVCHAD/lua/nvchad/plugins`. By default, that's just two files:
+
+- `init.lua`
+    - "nvim-lua/plenary.nvim"
+    - "stevearc/conform.nvim"
+    - "nvim-treesitter/nvim-treesitter"
+    - "lewis6991/gitsigns.nvim"
+    - "williamboman/mason.nvim"
+    - "neovim/nvim-lspconfig"
+    - "hrsh7th/nvim-cmp"
+        - "L3MON4D3/LuaSnip"
+        - "windwp/nvim-autopairs"
+        - "saadparwaiz1/cmp_luasnip"
+        - "hrsh7th/cmp-nvim-lua"
+        - "hrsh7th/cmp-nvim-lsp"
+        - "hrsh7th/cmp-buffer"
+        - "hrsh7th/cmp-path"
+    - "numToStr/Comment.nvim"
+    - "nvim-telescope/telescope.nvim"
+- `ui.lua`
+    - "NvChad/base46"
+    - "NvChad/ui"
+    - "NvChad/nvim-colorizer.lua"
+    - "nvim-tree/nvim-web-devicons"
+    - "lukas-reineke/indent-blankline.nvim"
+    - "nvim-tree/nvim-tree.lua"
+    - "folke/which-key.nvim"
+
+Note that the directory to configure everything is `$NVCHAD/lua/nvchad/configs`:
+
+- cmp.lua
+- gitsigns.lua
+- lazy_nvim.lua
+- lspconfig.lua
+- luasnip.lua
+- mason.lua
+- nvimtree.lua
+- telescope.lua
+- treesitter.lua
+
+Other significant files and directories:
+
+- `WHICH_KEY=$HOME/.local/share/nvim/lazy/which-key.nvim/`
+- `$NVCHAD/lua/nvchad/autocmds.lua`
+- `$NVCHAD/lua/nvchad/configs/lazy.lua`: for additional configuration options for the command
+   'require("lazy").setup({...}, lazy_config)'
