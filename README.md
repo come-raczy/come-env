@@ -105,6 +105,16 @@ tmux to use it (neovim is supposed to detect it automatically).
 
 This requires adding several languages: svelte, typescript, css, scss, and html. All can be done with `:TSInstall <language>` or in the treesitter configuration.
 
+# Lint
+
+These are the linters that are worth installing:
+
+- Docker: [hadolint](https://github.com/hadolint/hadolint/)
+- JSON: jsonlint
+- javascript: `sudo npm install -g eslint_d`
+- Markdown: `sudo npm install -g markdownlint-cli`
+- Python: `sudo apt install pylint`
+- Text: `sudo snap install vale`
 
 # Language servers
 
@@ -131,40 +141,40 @@ Can be installed with npm:
 Starts with the usual `~/.config/nvim/init.lua`, that bootstraps `lazy` if it can't find:
 
     #  vim.fn.stdpath("data") is $HOME/.local/share/nvim
-    lazypath = vim.fn.stdpath("data") .. '/lazy/lazy.nvim' 
+    lazypath = vim.fn.stdpath("data") .. '/lazy/lazy.nvim'
 
-The bootstrapping is done by cloning the github repo 'folke/lazi.nvim.git' into `lazypath`. This path is then prepended 
+The bootstrapping is done by cloning the github repo 'folke/lazi.nvim.git' into `lazypath`. This path is then prepended
 to vim runtimepath (`vim.opt.rtp`, type `:set rtp` to see the value).
 With 'lazy' installed, the plugins are loaded within a `require("lazy").setup({...})`. First, loads
 'NvChad/NvChad' (which itself imports 'nvchad.plugins'), then imports 'plugins'.
-Lazy installs 'NvChad' in `NVCHAD=$HOME/.local/share/nvim/lazy/NvChad/` and the plugins are in 
+Lazy installs 'NvChad' in `NVCHAD=$HOME/.local/share/nvim/lazy/NvChad/` and the plugins are in
 `$NVCHAD/lua/nvchad/plugins`. By default, that's just two files:
 
 - `init.lua`
-    - "nvim-lua/plenary.nvim"
-    - "stevearc/conform.nvim"
-    - "nvim-treesitter/nvim-treesitter"
-    - "lewis6991/gitsigns.nvim"
-    - "williamboman/mason.nvim"
-    - "neovim/nvim-lspconfig"
-    - "hrsh7th/nvim-cmp"
-        - "L3MON4D3/LuaSnip"
-        - "windwp/nvim-autopairs"
-        - "saadparwaiz1/cmp_luasnip"
-        - "hrsh7th/cmp-nvim-lua"
-        - "hrsh7th/cmp-nvim-lsp"
-        - "hrsh7th/cmp-buffer"
-        - "hrsh7th/cmp-path"
-    - "numToStr/Comment.nvim"
-    - "nvim-telescope/telescope.nvim"
+  - "nvim-lua/plenary.nvim"
+  - "stevearc/conform.nvim"
+  - "nvim-treesitter/nvim-treesitter"
+  - "lewis6991/gitsigns.nvim"
+  - "williamboman/mason.nvim"
+  - "neovim/nvim-lspconfig"
+  - "hrsh7th/nvim-cmp"
+    - "L3MON4D3/LuaSnip"
+    - "windwp/nvim-autopairs"
+    - "saadparwaiz1/cmp_luasnip"
+    - "hrsh7th/cmp-nvim-lua"
+    - "hrsh7th/cmp-nvim-lsp"
+    - "hrsh7th/cmp-buffer"
+    - "hrsh7th/cmp-path"
+  - "numToStr/Comment.nvim"
+  - "nvim-telescope/telescope.nvim"
 - `ui.lua`
-    - "NvChad/base46"
-    - "NvChad/ui"
-    - "NvChad/nvim-colorizer.lua"
-    - "nvim-tree/nvim-web-devicons"
-    - "lukas-reineke/indent-blankline.nvim"
-    - "nvim-tree/nvim-tree.lua"
-    - "folke/which-key.nvim"
+  - "NvChad/base46"
+  - "NvChad/ui"
+  - "NvChad/nvim-colorizer.lua"
+  - "nvim-tree/nvim-web-devicons"
+  - "lukas-reineke/indent-blankline.nvim"
+  - "nvim-tree/nvim-tree.lua"
+  - "folke/which-key.nvim"
 
 Note that the directory to configure everything is `$NVCHAD/lua/nvchad/configs`:
 
@@ -183,4 +193,4 @@ Other significant files and directories:
 - `WHICH_KEY=$HOME/.local/share/nvim/lazy/which-key.nvim/`
 - `$NVCHAD/lua/nvchad/autocmds.lua`
 - `$NVCHAD/lua/nvchad/configs/lazy.lua`: for additional configuration options for the command
-   'require("lazy").setup({...}, lazy_config)'
+  'require("lazy").setup({...}, lazy_config)'

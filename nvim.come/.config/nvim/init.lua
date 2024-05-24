@@ -92,13 +92,13 @@ vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper win
 -- Note that win32yank.exe causes hangs
 -- Note that clip.exe causes pronlems with CR/LF and non ASCII
 vim.opt.clipboard = "unnamedplus"
-if vim.fn.has("wsl") == 1 then
+if vim.fn.has "wsl" == 1 then
   vim.api.nvim_create_autocmd("TextYankPost", {
     group = vim.api.nvim_create_augroup("Yank", { clear = true }),
     callback = function()
       -- vim.fn.system("clip.exe", vim.fn.getreg('"'))
       -- vim.fn.system("win32yank.exe", vim.fn.getreg('"'))
-      vim.fn.system("xclip", vim.fn.getreg('"'))
+      vim.fn.system("xclip", vim.fn.getreg '"')
     end,
   })
 end
@@ -114,10 +114,8 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
-
-
 -- NvChad theme manager
-vim.g.base46_cache = vim.fn.stdpath "data" .. "/nvchad/base46/"
+-- vim.g.base46_cache = vim.fn.stdpath "data" .. "/nvchad/base46/"
 -- ====================================
 -- [[ bootstrap lazy and all plugins ]]
 -- ====================================
@@ -130,7 +128,7 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-local lazy_config = require "configs.lazy"
+local lazy_config = require "come.configs.lazy"
 
 -- load plugins
 require("lazy").setup({
@@ -144,14 +142,15 @@ require("lazy").setup({
   --   end,
   -- },
 
-  -- { import = "plugins" },
+  { import = "josean.plugins" },
+  { import = "josean.plugins.lsp" },
 
-  require 'come.plugins.vim-sleuth', -- Detect tabstop and shiftwidth automatically
-  require 'come.plugins.Comment', -- "gc" to comment visual regions/lines
-  require 'come.plugins.plenary', -- tools to build neovim plugins
-  require 'come.plugins.conform', -- formatting tools
-  require 'come.plugins.nvim-treesitter', -- Highlight, edit, and navigate code
-
+  -- require "come.plugins.vim-sleuth", -- Detect tabstop and shiftwidth automatically
+  -- require "come.plugins.Comment", -- "gc" to comment visual regions/lines
+  -- require "come.plugins.plenary", -- tools to build neovim plugins
+  -- require "come.plugins.conform", -- formatting tools
+  -- require "come.plugins.nvim-treesitter", -- Highlight, edit, and navigate code
+  -- require "josean.plugins", -- everything
 }, lazy_config)
 
 -- load theme
