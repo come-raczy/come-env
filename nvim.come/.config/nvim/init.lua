@@ -145,8 +145,13 @@ require("lazy").setup({
   -- },
 
   -- { import = "plugins" },
+
+  require 'come.plugins.vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  require 'come.plugins.Comment', -- "gc" to comment visual regions/lines
   require 'come.plugins.plenary', -- tools to build neovim plugins
   require 'come.plugins.conform', -- formatting tools
+  require 'come.plugins.nvim-treesitter', -- Highlight, edit, and navigate code
+
 }, lazy_config)
 
 -- load theme
