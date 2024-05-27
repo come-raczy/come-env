@@ -24,6 +24,7 @@ the following commands from this directory:
     [[ -d "$NVIM_CONF" ]] && mv "$NVIM_CONF" "$UNSTOW"
     stow -t $HOME tmux
     stow -t $HOME nvim
+    stow -t $HOME starship
 
 # Prerequisites
 
