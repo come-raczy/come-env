@@ -151,12 +151,14 @@ require("lazy").setup({
 	require("kickstart.plugins.debug"),
 	require("kickstart.plugins.dressing"),
 	require("kickstart.plugins.formatting"),
+	require("kickstart.plugins.hardtime"), -- A Neovim plugin helping you establish good command workflow and habit
 	require("kickstart.plugins.indent_line"),
 	require("kickstart.plugins.lint"),
 	require("kickstart.plugins.lualine"),
 	require("kickstart.plugins.neo-tree"),
 	require("kickstart.plugins.nvim-tree"),
 	require("kickstart.plugins.nvim-treesitter-text-objects"),
+	require("kickstart.plugins.precognition"), -- assists with motions
 	require("kickstart.plugins.substitute"),
 	require("kickstart.plugins.trouble"),
 	require("kickstart.plugins.vim-maximizer"),
