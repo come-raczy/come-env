@@ -12,6 +12,8 @@
 
 # Disable the blank line at the start of the prompt
 # add_newline = false
+#format = """[╭─►](#444b6a) $directory $fill $all[╰─►](#444b6a) $character"""
+format = """[╭─►](#444b6a)[❮](bold green) $directory[❯](bold green) $fill $all[╰─►](#444b6a)$character"""
 right_format = """$all"""
 
 # Set 'foo' as custom color palette
@@ -28,3 +30,6 @@ mustard = '#af8700'
 #[character] # The name of the module we are configuring is 'character'
 #success_symbol = '[➜](bold green)' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
 
+[fill]
+symbol = '─'
+style = 'bold #444b6a'
