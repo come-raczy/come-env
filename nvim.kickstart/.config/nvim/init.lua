@@ -148,6 +148,8 @@ require("lazy").setup({
 	require("kickstart.plugins.auto-session"),
 	require("kickstart.plugins.autopairs"),
 	require("kickstart.plugins.bufferline"),
+	require("kickstart.plugins.copilot"),
+	--require("kickstart.plugins.copilot-cmp"),
 	require("kickstart.plugins.debug"),
 	require("kickstart.plugins.dressing"),
 	require("kickstart.plugins.formatting"),
@@ -158,7 +160,7 @@ require("lazy").setup({
 	require("kickstart.plugins.neo-tree"),
 	require("kickstart.plugins.nvim-tree"),
 	require("kickstart.plugins.nvim-treesitter-text-objects"),
-	require("kickstart.plugins.precognition"), -- assists with motions
+	-- require("kickstart.plugins.precognition"), -- assists with motions
 	require("kickstart.plugins.substitute"),
 	require("kickstart.plugins.trouble"),
 	require("kickstart.plugins.vim-maximizer"),
