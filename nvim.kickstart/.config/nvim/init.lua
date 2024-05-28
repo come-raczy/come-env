@@ -84,17 +84,17 @@ I hope you enjoy your Neovim journey,
 P.S. You can delete this when you're done too. It's your config now! :)
 --]]
 
-require("globals")
-require("options")
-require("keymaps")
-require("autocmds")
+require "globals"
+require "options"
+require "keymaps"
+require "autocmds"
 
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-	local lazyrepo = "https://github.com/folke/lazy.nvim.git"
-	vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+  vim.fn.system { "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath }
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
@@ -110,102 +110,102 @@ vim.opt.rtp:prepend(lazypath)
 --
 -- NOTE: Here is where you install your plugins.
 require("lazy").setup({
-	-- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
-	"tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
+  -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
+  "tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
 
-	-- NOTE: Plugins can also be added by using a table,
-	-- with the first argument being the link and the following
-	-- keys can be used to configure plugin behavior/loading/etc.
-	--
-	-- Use `opts = {}` to force a plugin to be loaded.
-	--
-	--  This is equivalent to:
-	--    require('Comment').setup({})
+  -- NOTE: Plugins can also be added by using a table,
+  -- with the first argument being the link and the following
+  -- keys can be used to configure plugin behavior/loading/etc.
+  --
+  -- Use `opts = {}` to force a plugin to be loaded.
+  --
+  --  This is equivalent to:
+  --    require('Comment').setup({})
 
-	-- "gc" to comment visual regions/lines
-	{ import = "kickstart.plugins.Comment" },
-	{ import = "kickstart.plugins.gitsigns" }, -- TODO: compare with josean version
-	{ import = "kickstart.plugins.which-key" },
-	{ import = "kickstart.plugins.telescope" },
-	{ import = "kickstart.plugins.nvim-lspconfig" },
-	{ import = "kickstart.plugins.conform" },
-	{ import = "kickstart.plugins.nvim-cmp" },
-	{ import = "kickstart.plugins.tokyonight" },
-	{ import = "kickstart.plugins.todo-comments" },
-	{ import = "kickstart.plugins.mini" },
-	{ import = "kickstart.plugins.nvim-treesitter" },
+  -- "gc" to comment visual regions/lines
+  { import = "kickstart.plugins.Comment" },
+  { import = "kickstart.plugins.gitsigns" }, -- TODO: compare with josean version
+  { import = "kickstart.plugins.which-key" },
+  { import = "kickstart.plugins.telescope" },
+  { import = "kickstart.plugins.nvim-lspconfig" },
+  { import = "kickstart.plugins.conform" },
+  { import = "kickstart.plugins.nvim-cmp" },
+  { import = "kickstart.plugins.tokyonight" },
+  { import = "kickstart.plugins.todo-comments" },
+  { import = "kickstart.plugins.mini" },
+  { import = "kickstart.plugins.nvim-treesitter" },
 
-	-- The following two comments only work if you have downloaded the kickstart repo, not just copy pasted the
-	-- init.lua. If you want these files, they are in the repository, so you can just download them and
-	-- place them in the correct locations.
+  -- The following two comments only work if you have downloaded the kickstart repo, not just copy pasted the
+  -- init.lua. If you want these files, they are in the repository, so you can just download them and
+  -- place them in the correct locations.
 
-	-- NOTE: Next step on your Neovim journey: Add/Configure additional plugins for Kickstart
-	--
-	--  Here are some example plugins that I've included in the Kickstart repository.
-	--  Uncomment any of the lines below to enable them (you will need to restart nvim).
-	--
-	require("kickstart.plugins.alpha"),
-	require("kickstart.plugins.auto-session"),
-	require("kickstart.plugins.autopairs"),
-	require("kickstart.plugins.bufferline"),
-	require("kickstart.plugins.copilot"),
-	--require("kickstart.plugins.copilot-cmp"),
-	require("kickstart.plugins.debug"),
-	require("kickstart.plugins.dressing"),
-	require("kickstart.plugins.formatting"),
-	require("kickstart.plugins.hardtime"), -- A Neovim plugin helping you establish good command workflow and habit
-	require("kickstart.plugins.indent_line"),
-	require("kickstart.plugins.lint"),
-	require("kickstart.plugins.lualine"),
-	require("kickstart.plugins.neo-tree"),
-	require("kickstart.plugins.nvim-tree"),
-	require("kickstart.plugins.nvim-treesitter-text-objects"),
-	-- require("kickstart.plugins.precognition"), -- assists with motions
-	require("kickstart.plugins.substitute"),
-	require("kickstart.plugins.trouble"),
-	require("kickstart.plugins.vim-maximizer"),
+  -- NOTE: Next step on your Neovim journey: Add/Configure additional plugins for Kickstart
+  --
+  --  Here are some example plugins that I've included in the Kickstart repository.
+  --  Uncomment any of the lines below to enable them (you will need to restart nvim).
+  --
+  require "kickstart.plugins.alpha",
+  require "kickstart.plugins.auto-session",
+  require "kickstart.plugins.autopairs",
+  require "kickstart.plugins.bufferline",
+  require "kickstart.plugins.copilot",
+  --require("kickstart.plugins.copilot-cmp"),
+  require "kickstart.plugins.debug",
+  require "kickstart.plugins.dressing",
+  require "kickstart.plugins.formatting",
+  require "kickstart.plugins.hardtime", -- A Neovim plugin helping you establish good command workflow and habit
+  require "kickstart.plugins.indent_line",
+  require "kickstart.plugins.lint",
+  require "kickstart.plugins.lualine",
+  -- require("kickstart.plugins.neo-tree"),
+  require "kickstart.plugins.nvim-tree",
+  require "kickstart.plugins.nvim-treesitter-text-objects",
+  -- require("kickstart.plugins.precognition"), -- assists with motions
+  require "kickstart.plugins.substitute",
+  require "kickstart.plugins.trouble",
+  require "kickstart.plugins.vim-maximizer",
 
-	-- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
-	--    This is the easiest way to modularize your config.
-	--
-	--  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
-	--    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
-	-- { import = 'custom.plugins' },
+  -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
+  --    This is the easiest way to modularize your config.
+  --
+  --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
+  --    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
+  -- { import = 'custom.plugins' },
 }, {
-	ui = {
-		-- If you are using a Nerd Font: set icons to an empty table which will use the
-		-- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
-		icons = vim.g.have_nerd_font and {} or {
-			cmd = "⌘",
-			config = "🛠",
-			event = "📅",
-			ft = "📂",
-			init = "⚙",
-			keys = "🗝",
-			plugin = "🔌",
-			runtime = "💻",
-			require = "🌙",
-			source = "📄",
-			start = "🚀",
-			task = "📌",
-			lazy = "💤 ",
-		},
-	},
+  ui = {
+    -- If you are using a Nerd Font: set icons to an empty table which will use the
+    -- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
+    icons = vim.g.have_nerd_font and {} or {
+      cmd = "⌘",
+      config = "🛠",
+      event = "📅",
+      ft = "📂",
+      init = "⚙",
+      keys = "🗝",
+      plugin = "🔌",
+      runtime = "💻",
+      require = "🌙",
+      source = "📄",
+      start = "🚀",
+      task = "📌",
+      lazy = "💤 ",
+    },
+  },
 })
 
 local lastplace = vim.api.nvim_create_augroup("LastPlace", {})
-vim.api.nvim_clear_autocmds({ group = lastplace })
+vim.api.nvim_clear_autocmds { group = lastplace }
 vim.api.nvim_create_autocmd("BufReadPost", {
-	group = lastplace,
-	pattern = { "*" },
-	desc = "remember last cursor place",
-	callback = function()
-		local mark = vim.api.nvim_buf_get_mark(0, '"')
-		local lcount = vim.api.nvim_buf_line_count(0)
-		if mark[1] > 0 and mark[1] <= lcount then
-			pcall(vim.api.nvim_win_set_cursor, 0, mark)
-		end
-	end,
+  group = lastplace,
+  pattern = { "*" },
+  desc = "remember last cursor place",
+  callback = function()
+    local mark = vim.api.nvim_buf_get_mark(0, '"')
+    local lcount = vim.api.nvim_buf_line_count(0)
+    if mark[1] > 0 and mark[1] <= lcount then
+      pcall(vim.api.nvim_win_set_cursor, 0, mark)
+    end
+  end,
 })
 
 -- Un/resetting keymaps that cause conflicts
