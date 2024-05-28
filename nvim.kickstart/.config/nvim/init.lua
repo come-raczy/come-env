@@ -208,5 +208,10 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 	end,
 })
 
+-- Un/resetting keymaps that cause conflicts
+vim.keymap.set("n", "gc", "<Nop>", { noremap = true, silent = true })
+vim.keymap.set("n", "gb", "<Nop>", { noremap = true, silent = true })
+-- vim.keymap.set("n", "gcx", "<Plug>(comment_toggle_linewise)", { desc = 'Comment toggle linewise' })
+-- vim.keymap.set("n", "gbx", "<Plug>(comment_toggle_blockwise)", { desc = 'Comment toggle blockwise' })
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
