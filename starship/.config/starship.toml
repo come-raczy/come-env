@@ -11,7 +11,7 @@
 #scan_timeout = 10
 
 # Disable the blank line at the start of the prompt
-add_newline = false
+# add_newline = false
 right_format = """$all"""
 
 # Set 'foo' as custom color palette
