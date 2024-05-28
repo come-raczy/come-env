@@ -1,35 +1,26 @@
 # ~/.config/starship.toml
 
-#format = 'via [$symbol($version )]($style)'
-# Use custom format
-#format = '''
-#[┌───────────────────>](bold green)
-#[│](bold green)$directory$rust$package$git_branch$git_status$nodejs$lua$python
-#[└─>](bold green) '''
+format = """[╭─►](muted_blue)[❮](bold green) $directory[❯](bold green) $fill $all[╰─►](muted_blue)$character"""
+#right_format = """$all"""
 
-# Wait 10 milliseconds for starship to check files under the current directory.
-#scan_timeout = 10
+# Set 'custom' as custom color palette with muted_blue
+palette = 'custom'
+[palettes.custom]
+muted_blue = '#333b52'
 
-# Disable the blank line at the start of the prompt
-# add_newline = false
-#format = """[╭─►](#444b6a) $directory $fill $all[╰─►](#444b6a) $character"""
-format = """[╭─►](#444b6a)[❮](bold green) $directory[❯](bold green) $fill $all[╰─►](#444b6a)$character"""
-right_format = """$all"""
-
-# Set 'foo' as custom color palette
-palette = 'foo'
-
-# Define custom colors
-[palettes.foo]
-# Overwrite existing color
-blue = '21'
-# Define new color
-mustard = '#af8700'
-
-# Replace the '❯' symbol in the prompt with '➜'
-#[character] # The name of the module we are configuring is 'character'
-#success_symbol = '[➜](bold green)' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
+[character]
+success_symbol = '[❯](bold green)'
+error_symbol = '[❯](bold red)'
 
 [fill]
 symbol = '─'
-style = 'bold #444b6a'
+style = 'bold muted_blue'
+
+[line_break]
+disabled = false
+
+# NOTE: $gcloud default symbol generates a newline on WSL
+[gcloud]
+disabled = true
+symbol = ''
+
