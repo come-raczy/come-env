@@ -26,6 +26,7 @@ the following commands from this directory:
     stow -t $HOME nvim
     stow -t $HOME starship
     stow -t $HOME alacritty
+    stow -t $HOME wezterm
 
 # Prerequisites
 
