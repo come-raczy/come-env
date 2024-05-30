@@ -60,7 +60,7 @@ return { -- LSP Configuration & Plugins
             "graphql",
             "emmet_ls",
             "prismals",
-            "pyright",
+            -- "pyright",
           },
         }
         local lspconfig = require "lspconfig"
@@ -134,9 +134,9 @@ return { -- LSP Configuration & Plugins
           ensure_installed = {
             "prettier", -- prettier formatter
             "stylua", -- lua formatter
-            "isort", -- python formatter
-            "black", -- python formatter
-            "pylint",
+            -- "isort", -- python formatter
+            -- "black", -- python formatter
+            -- "pylint",
             "eslint_d",
           },
         }
@@ -349,13 +349,28 @@ return { -- LSP Configuration & Plugins
       -- perlls = {},
       -- postgres_lsp = {},
       prismals = {},
-      pylsp = {},
+      pylsp = {
+        -- cmd = {...},
+        -- filetypes = { ...},
+        -- capabilities = {},
+        settings = {
+          pylsp = {
+            plugins = {
+              pycodestyle = { enabled = false },
+              pyflakes = { enabled = false },
+              pylint = { enabled = false },
+              yapf = { enabled = false },
+            },
+          },
+        },
+      },
       r_language_server = {},
       rust_analyzer = {},
       svelte = {},
       tailwindcss = {},
       terraformls = {},
       tsserver = {},
+      unocss = {},
       vimls = {},
       yamlls = {},
     }

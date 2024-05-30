@@ -33,7 +33,7 @@ the following commands from this directory:
 In order to silent all the warnings from masson, install additional language support:
 
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-    sudo apt install golang composer php luarocks ruby-dev  default-jdk ripgrep fd-find npm tree-sitter-cli cargo
+    sudo apt install golang composer php luarocks ruby-dev  default-jdk ripgrep fd-find npm tree-sitter-cli cargo maven libxml2-dev libcurl4-gnutls-dev
     sudo gem install neovim
     sudo npm install -g neovim tree-sitter-cli
     sudo snap install julia --classic
@@ -120,6 +120,9 @@ These are the linters that are worth installing:
 - Text: `sudo snap install vale`
 
 # Language servers
+
+For troubleshootion, open a file that requires the problematic language server, run `:LspInstall`, and select the server to install.
+When it fails, expand the trace to see the error message. Typically, the failure is because of some missing dependency.
 
 ## lua-language-server
 

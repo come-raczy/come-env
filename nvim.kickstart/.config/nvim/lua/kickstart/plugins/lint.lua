@@ -11,7 +11,7 @@ return {
         javascript = { "eslint_d" },
         javascriptreact = { "eslint_d" },
         markdown = { "markdownlint" },
-        python = { "pylint" },
+        --python = { "pylint" },
         svelte = { "eslint_d" },
         text = { "vale" },
         typescript = { "eslint_d" },
