@@ -124,6 +124,12 @@ These are the linters that are worth installing:
 For troubleshootion, open a file that requires the problematic language server, run `:LspInstall`, and select the server to install.
 When it fails, expand the trace to see the error message. Typically, the failure is because of some missing dependency.
 
+Some useful commands to inspect LSP configuration:
+
+    :lua print(vim.inspect(vim.lsp.get_active_clients()))
+    :lua print(vim.inspect(vim.lsp.get_log_path()))
+    :enew|put=execute(\"lua print(vim.inspect(vim.lsp.get_active_clients({name='pylsp'})))\")
+
 ## lua-language-server
 
 With ChadNv, there is a need to install a language server for lua. The steps are:
@@ -135,6 +141,16 @@ With ChadNv, there is a need to install a language server for lua. The steps are
 
 Note that the `bin/lua-language-server` could be copied to another bin directory, but this rerquires
 copying the `bin/main.lua` as well, and editing it to specify the root of the lua-language-server install.
+
+## python
+
+For python, install:
+
+- ruff: works with poetry configuration specified in `pyproject.toml`
+- basedpyright: that's the pip version of VS Code standard
+
+Note that Ruff has code actions: `<leader>ca` to apply the code action under the cursor. For instance,
+uswe it to reorder imports only, or to 'Fix All'.
 
 ## svelte-language-server
 

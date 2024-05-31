@@ -315,6 +315,7 @@ return { -- LSP Configuration & Plugins
       --
 
       awk_ls = {},
+      basedpyright = {},
       bashls = {},
       clangd = {},
       cmake = {},
@@ -349,22 +350,23 @@ return { -- LSP Configuration & Plugins
       -- perlls = {},
       -- postgres_lsp = {},
       prismals = {},
-      pylsp = {
-        -- cmd = {...},
-        -- filetypes = { ...},
-        -- capabilities = {},
-        settings = {
-          pylsp = {
-            plugins = {
-              pycodestyle = { enabled = false },
-              pyflakes = { enabled = false },
-              pylint = { enabled = false },
-              yapf = { enabled = false },
-            },
-          },
-        },
-      },
+      -- pylsp = {
+      --   -- cmd = {...},
+      --   -- filetypes = { ...},
+      --   -- capabilities = {},
+      --   settings = {
+      --     pylsp = {
+      --       plugins = {
+      --         pycodestyle = { enabled = false, },
+      --         pyflakes = { enabled = false },
+      --         pylint = { enabled = true },
+      --         yapf = { enabled = false },
+      --       },
+      --     },
+      --   },
+      -- },
       r_language_server = {},
+      ruff_lsp = {},
       rust_analyzer = {},
       svelte = {},
       tailwindcss = {},
