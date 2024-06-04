@@ -18,6 +18,8 @@ And then copy the shell to the EFI partition.
 
     sudo cp /usr/share/edk2-shell/x64/Shell.efi /efi/Shell_x64.efi
 
+## Identify the Windows EFI partition PARTUUID
+
 The PARTUUID of the Windows ESP partition can be found with `lsblk -f` or `blkid`:
 
     sudo blkid | grep vfat
@@ -30,6 +32,8 @@ Add `console-mode max` to the `esp/loader/loader.conf`. Reboot, and choose the E
 (this is why we need to install edk2-shell). From there, identify the FS alias corresponding to the PARTUUID
 of the Windows ESP partition. It can be something lije `HD2c`, or `HD0a66666a2`. Enter `exit` and boot into
 Linux again.
+
+## Create a loader entry for Windows
 
 Create a file `/efi/windows.nsh` (replace `HD2c` with the FS alias of the Windows ESP partition):
 
