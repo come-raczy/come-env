@@ -48,3 +48,12 @@ Now create a loader entry `/efi/loader/entries/windows.conf` for that Windows In
 See [Add a systemd-boot loader Menu entry for a Windows installation using a separate ESP Partition]
 (https://forum.endeavouros.com/t/tutorial-add-a-systemd-boot-loader-menu-entry-for-a-windows-installation-using-a-separate-esp-partition/37431)
 for more information.
+
+## [Installation using XBOOTLDR](https://wiki.archlinux.org/title/systemd-boot#Installation_using_XBOOTLDR)
+
+This enables having a seprate `/boot` partition of type "Linux extended boot" (XBOOTLDR), which is useful for dual-booting with Windows when the ESP is too small.
+The partition must have a GUID of `bc13c2ff-59e6-4262-a352-b275fd6f7172` (`ea00` for `gdisk`) and large enough to accomodate all the kernels.
+
+During install, mount ESP to `/mnt/efi`, and XBOOTLDR to `/mnt/boot`. Once in `chroot`, use:
+
+    bootctl --esp-path=/efi --boot-path=/boot install
