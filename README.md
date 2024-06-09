@@ -51,6 +51,9 @@ to the OS:
 
 - Windows: unzip all, select all the font files in the file explorer, right click, and select 'Install'
 - Ubuntu: TBD
+- Arch:
+
+  sudo pacman -S ttf-sourcecodepro-nerd ttf-liberation-mono-nerd ttf-cascadia-code-nerd ttf-cascadia-mono-nerd ttf-roboto-mono-nerd ttf-victor-mono-nerd ttf-dejavu-nerd ttf-ubuntu-mono-nerd
 
 Once the fonts are installed, select a Nerd Font for the terminal, according to the OS and terminal:
 
