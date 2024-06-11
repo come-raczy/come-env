@@ -17,7 +17,9 @@ fi
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # better cat
-alias bat=batcat
+if [[ $(uname -r) == *ubuntu* ]] ; then
+    alias bat=batcat
+fi
 alias ll="eza --color=always --long --git --icons=always "
 # thefuck alias
 eval $(thefuck --alias)
