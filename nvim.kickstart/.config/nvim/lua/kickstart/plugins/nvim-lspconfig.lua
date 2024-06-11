@@ -12,15 +12,15 @@ return { -- LSP Configuration & Plugins
       },
       config = function()
         -- import mason
-        local mason = require "mason"
+        local mason = require("mason")
 
         -- import mason-lspconfig
-        local mason_lspconfig = require "mason-lspconfig"
+        local mason_lspconfig = require("mason-lspconfig")
 
-        local mason_tool_installer = require "mason-tool-installer"
+        local mason_tool_installer = require("mason-tool-installer")
 
         -- enable mason and configure icons
-        mason.setup {
+        mason.setup({
           ui = {
             icons = {
               package_installed = "✓",
@@ -28,9 +28,9 @@ return { -- LSP Configuration & Plugins
               package_uninstalled = "✗",
             },
           },
-        }
+        })
 
-        mason_lspconfig.setup {
+        mason_lspconfig.setup({
           -- list of servers for mason to install
           ensure_installed = {
             -- "bash-language-server",
@@ -51,53 +51,54 @@ return { -- LSP Configuration & Plugins
             -- "stylua",
             -- "svelte-language-server",
             -- "typescript-language-server",
-            "tsserver",
-            "html",
-            "cssls",
-            "tailwindcss",
-            "svelte",
+            -- "tsserver",
+            -- "html",
+            -- "cssls",
+            --"tailwindcss",
+            -- "svelte",
             "lua_ls",
             "graphql",
-            "emmet_ls",
+            "emmet_language_server",
+            -- "emmet_ls",
             "prismals",
             -- "pyright",
           },
-        }
-        local lspconfig = require "lspconfig"
-        local cmp_nvim_lsp = require "cmp_nvim_lsp"
+        })
+        local lspconfig = require("lspconfig")
+        local cmp_nvim_lsp = require("cmp_nvim_lsp")
         local capabilities = cmp_nvim_lsp.default_capabilities()
-        mason_lspconfig.setup_handlers {
+        mason_lspconfig.setup_handlers({
           -- default handler for installed servers
           function(server_name)
-            lspconfig[server_name].setup {
+            lspconfig[server_name].setup({
               capabilities = capabilities,
-            }
+            })
           end,
-          ["svelte"] = function()
-            -- configure svelte server
-            lspconfig["svelte"].setup {
-              capabilities = capabilities,
-              on_attach = function(client, bufnr)
-                vim.api.nvim_create_autocmd("BufWritePost", {
-                  pattern = { "*.js", "*.ts" },
-                  callback = function(ctx)
-                    -- Here use ctx.match instead of ctx.file
-                    client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.match })
-                  end,
-                })
-              end,
-            }
-          end,
-          ["graphql"] = function()
-            -- configure graphql language server
-            lspconfig["graphql"].setup {
-              capabilities = capabilities,
-              filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
-            }
-          end,
-          ["emmet_ls"] = function()
+          -- ["svelte"] = function()
+          --   -- configure svelte server
+          --   lspconfig["svelte"].setup({
+          --     capabilities = capabilities,
+          --     on_attach = function(client, bufnr)
+          --       vim.api.nvim_create_autocmd("BufWritePost", {
+          --         pattern = { "*.js", "*.ts" },
+          --         callback = function(ctx)
+          --           -- Here use ctx.match instead of ctx.file
+          --           client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.match })
+          --         end,
+          --       })
+          --     end,
+          --   })
+          -- end,
+          -- ["graphql"] = function()
+          --   -- configure graphql language server
+          --   lspconfig["graphql"].setup({
+          --     capabilities = capabilities,
+          --     filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
+          --   })
+          -- end,
+          ["emmet_language_server"] = function()
             -- configure emmet language server
-            lspconfig["emmet_ls"].setup {
+            lspconfig["emmet_language_server"].setup({
               capabilities = capabilities,
               filetypes = {
                 "html",
@@ -109,11 +110,27 @@ return { -- LSP Configuration & Plugins
                 "less",
                 "svelte",
               },
-            }
+            })
           end,
+          -- ["emmet_ls"] = function()
+          --   -- configure emmet language server
+          --   lspconfig["emmet_ls"].setup({
+          --     capabilities = capabilities,
+          --     filetypes = {
+          --       "html",
+          --       "typescriptreact",
+          --       "javascriptreact",
+          --       "css",
+          --       "sass",
+          --       "scss",
+          --       "less",
+          --       "svelte",
+          --     },
+          --   })
+          -- end,
           ["lua_ls"] = function()
             -- configure lua server (with special settings)
-            lspconfig["lua_ls"].setup {
+            lspconfig["lua_ls"].setup({
               capabilities = capabilities,
               settings = {
                 Lua = {
@@ -126,20 +143,20 @@ return { -- LSP Configuration & Plugins
                   },
                 },
               },
-            }
+            })
           end,
-        }
+        })
 
-        mason_tool_installer.setup {
+        mason_tool_installer.setup({
           ensure_installed = {
             "prettier", -- prettier formatter
-            "stylua", -- lua formatter
+            -- "stylua", -- lua formatter
             -- "isort", -- python formatter
             -- "black", -- python formatter
             -- "pylint",
-            "eslint_d",
+            -- "eslint_d",
           },
-        }
+        })
       end,
     }, -- NOTE: Must be loaded before dependants
     "williamboman/mason-lspconfig.nvim",
@@ -267,7 +284,7 @@ return { -- LSP Configuration & Plugins
             group = vim.api.nvim_create_augroup("kickstart-lsp-detach", { clear = true }),
             callback = function(event2)
               vim.lsp.buf.clear_references()
-              vim.api.nvim_clear_autocmds { group = "kickstart-lsp-highlight", buffer = event2.buf }
+              vim.api.nvim_clear_autocmds({ group = "kickstart-lsp-highlight", buffer = event2.buf })
             end,
           })
         end
@@ -324,9 +341,10 @@ return { -- LSP Configuration & Plugins
       -- css_modules = {},
       -- docker_compose_lanquage_services = {},
       dockerls = {},
-      eslint = {},
+      emmet_language_server = {},
+      -- eslint = {},
       graphql = {},
-      html = {},
+      -- html = {},
       htmx = {},
       java_language_server = {},
       jsonls = {},
@@ -368,11 +386,11 @@ return { -- LSP Configuration & Plugins
       r_language_server = {},
       ruff_lsp = {},
       rust_analyzer = {},
-      svelte = {},
-      tailwindcss = {},
+      -- svelte = {},
+      --tailwindcss = {},
       terraformls = {},
       tsserver = {},
-      unocss = {},
+      -- unocss = {},
       vimls = {},
       yamlls = {},
     }
@@ -391,9 +409,9 @@ return { -- LSP Configuration & Plugins
     vim.list_extend(ensure_installed, {
       "stylua", -- Used to format Lua code
     })
-    require("mason-tool-installer").setup { ensure_installed = ensure_installed }
+    require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
-    require("mason-lspconfig").setup {
+    require("mason-lspconfig").setup({
       handlers = {
         function(server_name)
           local server = servers[server_name] or {}
@@ -404,6 +422,6 @@ return { -- LSP Configuration & Plugins
           require("lspconfig")[server_name].setup(server)
         end,
       },
-    }
+    })
   end,
 }
