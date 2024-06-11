@@ -126,6 +126,10 @@ These are the linters that are worth installing:
 
 # Language servers
 
+There is a balance between added value of complementary language servers and the pain of redundant diagnostics.
+For instance, for web development, just select one that does everything well (html. css, js, ts, svelte, etc)
+and disable the others.
+
 For troubleshootion, open a file that requires the problematic language server, run `:LspInstall`, and select the server to install.
 When it fails, expand the trace to see the error message. Typically, the failure is because of some missing dependency.
 
