@@ -29,6 +29,9 @@ the following commands from this directory:
     stow -t $HOME alacritty
     stow -t $HOME wezterm
     stow -t $HOME waybar
+    stow -t $HOME sway
+    stow -t $HOME hyprland
+    stow -t $HOME editorconfig
 
 # Prerequisites
 
