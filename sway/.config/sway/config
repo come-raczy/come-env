@@ -4,7 +4,7 @@
 #
 # Read `man 5 sway` for a complete reference.
 
-font pango: UbuntuMono Nerd Font Regular 16
+font pango: UbuntuMono Nerd Font Regular 14
 
 #swaymsg gaps inner 14px
 #swaymsg gaps outer 14px
@@ -29,9 +29,15 @@ set $term alacritty
 #set $menu dmenu_path | wmenu | xargs swaymsg exec --
 set $menu wofi --show run
 
+exec wl-paste -t text --watch clipman store --no-persist
+exec dunst 
+exec nm-applet --indicator 
+exec blueman-tray 
+
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+output HDMI-A-1 scale 1.2
 output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #
 # Example configuration:

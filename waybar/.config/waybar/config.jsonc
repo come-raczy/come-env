@@ -28,8 +28,24 @@
         // "battery#bat2",
         "tray",
         "clock#date",
-        "clock#time"
+        "clock#time",
+        "bluetooth",
+        "custom/poweroff"
     ],
+    "bluetooth": {
+        // "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
+        "format": " {status}",
+        "format-disabled": "", // an empty format will hide the module
+        "format-connected": " {num_connections} connected",
+        "tooltip-format": "{controller_alias}\t{controller_address}",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
+    },
+    "custom/poweroff": {
+        "tooltip": false,
+        "format": "",
+        "on-click": "bash $HOME/.config/waybar/scripts/poweroff.sh"
+    },
     "keyboard-state": {
         "numlock": true,
         "capslock": true,
@@ -83,7 +99,7 @@
     },
     "clock#date": {
         "interval": 10,
-        "format": "  {:%e %b %Y}", // Icon: calendar-alt
+        "format": "  {:%e %b}", // Icon: calendar-alt
         "tooltip-format": "<big>{:%e %B %Y}</big>\n<tt>{calendar}</tt>",
     },
     // "clock": {
