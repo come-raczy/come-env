@@ -8,7 +8,9 @@
     //"modifier_reset": "release",
     // Choose the order of the modules
     "modules-left": [
-        "hyprland/workspaces"
+        "sway/mode",
+        "sway/workspaces",
+        "custom/arrow10"
     ],
     "modules-center": [
         "hyprland/window"
@@ -209,5 +211,45 @@
         "escape": true,
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
+    "custom/arrow1": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/arrow2": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/arrow3": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/arrow4": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/arrow5": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/arrow6": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/arrow7": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/arrow8": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/arrow9": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/arrow10": {
+        "format": "",
+        "tooltip": false
     }
 }
