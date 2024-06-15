@@ -13,7 +13,7 @@
         "custom/arrow10"
     ],
     "modules-center": [
-        "hyprland/window"
+        "sway/window"
     ],
     "modules-right": [
         "mpd",
