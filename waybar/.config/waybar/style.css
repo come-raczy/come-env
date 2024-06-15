@@ -72,7 +72,6 @@ button:hover {
   border-bottom: 3px solid #ffffff;
 }
 
-#clock,
 #battery,
 #cpu,
 #memory,
@@ -103,6 +102,13 @@ button:hover {
   /* border: 2px solid #ffff88;*/
 }
 
+#clock {
+  padding: 0px 8px 0px 8px;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0);
+  /* border: 2px solid #ffff88;*/
+}
+
 #window,
 #workspaces {
   margin: 0 4px;
@@ -116,10 +122,6 @@ button:hover {
 /* If workspaces is the rightmost module, omit right margin */
 .modules-right > widget:last-child > #workspaces {
   margin-right: 0;
-}
-
-#clock {
-  background-color: #64727d;
 }
 
 #battery {
