@@ -5,7 +5,8 @@ anything to do about it.
 
 It does work with the nvidia driver, but there are several issues that need to be resolved:
 
-- gdm will disable wayland
+- sway requires the additional --unsupported-gpu flag
+- gdm will disable Wayland
 - the cursor won't be visible
 - there will be a lot of flickering
 - requires additional commandline option: `nvidia_drm.modeset=1`

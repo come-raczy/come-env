@@ -44,6 +44,6 @@ bindings = [
 
 # Toggle vi-mode copy/paste: Ctrl+Shift+Space
 # To Copy, either use mouse and Ctrl+Shift+c, or enter vi-mode and use v, r,
-# h,j,k,l, and y like in vi. 
+# h,j,k,l, and y like in vi.
 #
 #
