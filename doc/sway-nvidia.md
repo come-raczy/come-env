@@ -43,3 +43,5 @@ Yjhr rditing is trivial from the compilation error, but it's a process:
 Edit `/etc/kernel/cmdline` to add `nvidia-drm.modeset=1`:
 
     root=PARTUUID=5cfe5f46-3580-42ed-8506-6dfe32b45083 zswap.enabled=0 rw rootfstype=ext4 nvidia-drm.modeset=1
+
+Then run `sudo mkinitcpio -P`.
