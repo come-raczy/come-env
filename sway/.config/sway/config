@@ -4,7 +4,12 @@
 #
 # Read `man 5 sway` for a complete reference.
 
-font pango: UbuntuMono Nerd Font Regular 14
+default_border none 0
+#default_floating_border none
+titlebar_padding 1
+titlebar_border_thickness 0
+font pango: monospace 1
+#font pango: UbuntuMono Nerd Font Regular 14
 
 #swaymsg gaps inner 14px
 #swaymsg gaps outer 14px
