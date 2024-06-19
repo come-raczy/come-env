@@ -8,12 +8,15 @@
     //"modifier_reset": "release",
     // Choose the order of the modules
     "modules-left": [
-        "sway/mode",
-        "sway/workspaces",
+        //"sway/mode",
+        //"sway/workspaces",
+        "hyprland/mode",
+        "hyprland/workspaces",
         "custom/arrow10"
     ],
     "modules-center": [
-        "sway/window"
+        //"sway/window"
+        "hyprland/window"
     ],
     "modules-right": [
         "mpd",
