@@ -36,7 +36,8 @@
         //"bluetooth",
         "clock#date",
         "clock#time",
-        "custom/poweroff"
+        // "custom/poweroff"
+        "custom/exit"
     ],
     "bluetooth": {
         // "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
@@ -51,6 +52,11 @@
         "tooltip": false,
         "format": "",
         "on-click": "bash $HOME/.config/waybar/scripts/poweroff.sh"
+    },
+    "custom/exit": {
+        "format": "",
+        "on-click": "wlogout",
+        "tooltip-format": "Power Menu"
     },
     "keyboard-state": {
         "numlock": true,
