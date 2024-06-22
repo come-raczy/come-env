@@ -80,11 +80,8 @@ button:hover {
 #temperature,
 #backlight,
 #keyboard-state,
-#network,
-#pulseaudio,
 #wireplumber,
 #custom-media,
-#tray,
 #mode,
 #idle_inhibitor,
 #scratchpad,
@@ -102,6 +99,9 @@ button:hover {
   /* border: 2px solid #ffff88;*/
 }
 
+#network,
+#pulseaudio,
+#tray,
 #clock {
   padding: 0px 8px 0px 8px;
   color: #ffffff;
@@ -173,21 +173,21 @@ label:focus {
   background-color: #90b1b1;
 }
 
-#network {
+/*#network {
   background-color: #2980b9;
 }
 
 #network.disconnected {
   background-color: #f53c3c;
-}
+}*/
 
 #pulseaudio {
-  background-color: #f1c40f;
-  color: #000000;
+  /*background-color: #f1c40f;*/
+  color: #ffffff;
 }
 
 #pulseaudio.muted {
-  background-color: #90b1b1;
+  /*background-color: #90b1b1;*/
   color: #2a5c45;
 }
 
@@ -222,9 +222,9 @@ label:focus {
   background-color: #eb4d4b;
 }
 
-#tray {
+/*#tray {
   background-color: #2980b9;
-}
+}*/
 
 #tray > .passive {
   -gtk-icon-effect: dim;
@@ -232,7 +232,7 @@ label:focus {
 
 #tray > .needs-attention {
   -gtk-icon-effect: highlight;
-  background-color: #eb4d4b;
+  /*background-color: #eb4d4b;*/
 }
 
 #idle_inhibitor {
