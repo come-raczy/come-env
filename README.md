@@ -34,7 +34,20 @@ the following commands from this directory:
     stow -t $HOME editorconfig
     stow -t $HOME wlogout
 
-# Prerequisites
+## Suspend
+
+With the NVIDIA proprietary driver, the following is needed:
+
+- add `nvidia.NVreg_PreserveVideoMemoryAllocations=1` to `/etc/kernel/cmdline` (and then run `sudo mkinitcpio -P`)
+- enable nvidia-services
+
+This is done with:
+
+    systemctl enable nvidia-suspend.service
+    systemctl enable nvidia-resume.service
+    systemctl enable nvidia-hibernate.service
+
+## Prerequisites
 
 In order to silent all the warnings from masson, install additional language support:
 
