@@ -1,6 +1,10 @@
 #!/bin/env bash
 
-# In order to create the configuration file with all the shared drives, run:
+# In order to generate rclone.conf, follow these instructions:
+# - run rclone config
+# - https://rclone.org/drive/#making-your-own-client-id
+# - authenticate through a browser
+#
 RCLONE_DIR=$(dirname $0)
 CONFIG_FILE=$(date +"%Y-%M-%d_%H:%M:%S")_$$_rclone.conf
 cp ${RCLONE_DIR}/rclone.conf "${RCLONE_DIR}/${CONFIG_FILE}"
