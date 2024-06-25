@@ -33,6 +33,7 @@ the following commands from this directory:
     stow -t $HOME hyprland
     stow -t $HOME editorconfig
     stow -t $HOME wlogout
+    stow --dotfile -t $HOME rclone
 
 ## Suspend
 
