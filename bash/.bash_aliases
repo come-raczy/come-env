@@ -22,6 +22,7 @@ if [[ $(uname -r) == *ubuntu* ]] ; then
     alias bat=batcat
 fi
 alias ll="eza --color=always --long --git --icons=always "
+alias lt="eza --color=always --long --git --icons=always --tree"
 # thefuck alias
 eval $(thefuck --alias)
 eval $(thefuck --alias fk)

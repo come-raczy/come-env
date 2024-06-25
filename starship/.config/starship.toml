@@ -16,6 +16,12 @@ error_symbol = '[❯](bold red)'
 symbol = '─'
 style = 'bold muted_blue'
 
+[git_branch]
+symbol = '🌱 '
+truncation_length = 30
+truncation_symbol = ''
+ignore_branches = ['master', 'main']
+
 [line_break]
 disabled = false
 
