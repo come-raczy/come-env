@@ -62,7 +62,23 @@ In order to silent all the warnings from masson, install additional language sup
 
 Start `nvim` and run `:checkhealth`.
 
-# Fonts
+## Devices
+
+With Hyprland, it is necessary to know the keyboard name in order to enable selection
+of keyboard variants. This is done like this:
+
+    hyprctl devices -j | jq ".keyboards.[] | select (.main==true) | .name"
+
+The name can then be copied into a `device` element in the `hyprland.conf`:
+
+    device {
+        name=mosart-semi.-2.4g-input-device
+        kb_layout=us,us
+        kb_variant=,intl
+        kb_options=grp:win_space_toggle
+    }
+
+## Fonts
 
 Install some Nerd Fonts. For instance, go to [ryanoasis/nerd-fonts releases page](https://github.com/ryanoasis/nerd-fonts/releases),
 select the latest release (v3.2.1 as of 2004-05-20), and downloas the chosen set of fonts (e.g. JetBrainsMono.zip). Install according
