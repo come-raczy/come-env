@@ -20,6 +20,7 @@
     ],
     "modules-right": [
         "custom/arrow1",
+        "hyprland/language",
         //"mpd",
         //"idle_inhibitor",
         "pulseaudio",
@@ -47,6 +48,10 @@
         "tooltip-format": "{controller_alias}\t{controller_address}",
         "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
         "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
+    },
+    "hyprland/language": {
+        "format": "⌨   {short} {variant}",
+        "keyboard-name": "mosart-semi.-2.4g-input-device"
     },
     "custom/poweroff": {
         "tooltip": false,

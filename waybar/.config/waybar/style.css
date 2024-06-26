@@ -106,6 +106,7 @@ button:hover {
   /* border: 2px solid #ffff88;*/
 }
 
+#language,
 #network,
 #pulseaudio,
 #tray,
@@ -269,11 +270,8 @@ label:focus {
 }
 
 #language {
-  background: #00b093;
-  color: #740864;
-  padding: 0 5px;
-  margin: 0 5px;
-  min-width: 16px;
+  min-width: 4em;
+  /* text-align: left; */
 }
 
 #keyboard-state {
