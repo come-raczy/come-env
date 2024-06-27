@@ -21,6 +21,7 @@
     "modules-right": [
         "custom/arrow1",
         "hyprland/language",
+        "battery",
         //"mpd",
         //"idle_inhibitor",
         "pulseaudio",
@@ -165,6 +166,7 @@
         ]
     },
     "battery": {
+        "interval": 1,
         "states": {
             // "good": 95,
             "warning": 30,
@@ -176,13 +178,19 @@
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
-        "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            ""
-        ]
+        "format-icons": {
+            "default": [
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "charging": "",
+            "plugged": "",
+            "warning": "w",
+            "critical": "c"
+        }
     },
     "battery#bat2": {
         "bat": "BAT2"

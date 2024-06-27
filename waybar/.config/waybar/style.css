@@ -72,7 +72,6 @@ button:hover {
   border-bottom: 3px solid #ffffff;
 }
 
-#battery,
 #cpu,
 #memory,
 #bluetooth,
@@ -107,6 +106,7 @@ button:hover {
 }
 
 #language,
+#battery,
 #network,
 #pulseaudio,
 #tray,
@@ -133,14 +133,14 @@ button:hover {
 }
 
 #battery {
-  background-color: #ffffff;
-  color: #000000;
+  color: #ffffff;
 }
 
 #battery.charging,
 #battery.plugged {
-  color: #ffffff;
-  background-color: #26a65b;
+  color: #ccffff;
+  /*background-color: #26a65b;*/
+  background-color: rgba(100, 200, 150, 0);
 }
 
 @keyframes blink {
