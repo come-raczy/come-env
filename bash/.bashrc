@@ -6,7 +6,8 @@ export __GLX_VENDOR_LIBRARY_NAME=nvidia
 export WLR_NO_HARDWARE_CURSORS=1
 export _JAVA_AWT_WM_NONREPARENTING=1
 export XCURSOR_SIZE=24
-export OUTPUT_MONITOR=$(hyprctl monitors all -j | jq ".[0].name")
+#export OUTPUT_MONITOR=$(hyprctl monitors all -j | jq ".[0].name")
+#export KEYBOARD_NAME=$(hyprctl devices -j | jq ".keyboards[] | select (.main == true).name")
 
 # If not running interactively, don't do anything
 case $- in
