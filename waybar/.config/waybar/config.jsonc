@@ -1,5 +1,6 @@
 {
-    "output": "eDP-1",
+    //"output": "eDP-1",
+    "output": "$KEYBOARD_NAME",
     // "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
     "height": 30, // Waybar height (to be removed for auto height)
