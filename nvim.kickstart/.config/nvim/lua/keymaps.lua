@@ -14,7 +14,7 @@ vim.keymap.set(
   "n",
   "<leader>dl",
   require("diagnostics").line_diagnostics,
-  { desc = "Show diagnostic [L]SP end error messages" }
+  { desc = "Show diagnostic [L]SP and error messages" }
 )
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
