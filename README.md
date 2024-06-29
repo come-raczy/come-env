@@ -62,6 +62,11 @@ In order to silent all the warnings from masson, install additional language sup
 
 Start `nvim` and run `:checkhealth`.
 
+## Google Drives
+
+They are managed through `rclone`. See in the `rclone` directory for the configuration and for
+a script to mount the drives in a reasonable way.
+
 ## Devices
 
 With Hyprland, it is necessary to know the keyboard name in order to enable selection
@@ -123,7 +128,20 @@ However, the 'telescope' plugin prevents the loading of 'netrw' and another solu
 The plugin "xiyaowong/link-visitor.nvim" offers this functionality, and the "link-visitor.lua" loads
 the plugin with Lazy, and configures it to bind the "link_under_cursor" function to "<leader>gx".
 
-## Copy/Paste WSL/tmux/neovim
+## Clipboard, Copy/Paste
+
+In all cases, male sure that the clipboard is set to 'unnamedplus' for neovim. This is typically done
+in `lua/options.lua`:
+
+    vim.opt.clipboard = "unnamedplus"
+
+For custom clipboards, set `g:clipboard` to a dictionary. See neovim `:help g:clipboard` for an example.
+
+### Wayland
+
+Install 'wwl-clipboard' and make sure that `WAYLAND_DISPLAY` is set.
+
+### WSL/tmux/neovim
 
 The solution used here is to explicitly link the '"' register to 'clip.exe':
 
