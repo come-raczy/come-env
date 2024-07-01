@@ -48,25 +48,6 @@ button:hover {
   box-shadow: inset 0 -3px #ffffff;
 }
 
-#workspaces button {
-  padding: 0 5px;
-  background-color: transparent;
-  color: #ffffff;
-}
-
-#workspaces button:hover {
-  background: rgba(0, 0, 0, 0.2);
-}
-
-#workspaces button.focused {
-  background-color: #64727d;
-  box-shadow: inset 0 -3px #ffffff;
-}
-
-#workspaces button.urgent {
-  background-color: #eb4d4b;
-}
-
 #mode {
   background-color: #64727d;
   border-bottom: 3px solid #ffffff;
@@ -119,6 +100,9 @@ button:hover {
 
 #window,
 #workspaces {
+  /* both background and background-color work */
+  /* background: rgba(255, 0, 255, 1); */
+  /* background-color: rgba(0, 255, 255, 1);*/
   margin: 0 4px;
 }
 
@@ -130,6 +114,44 @@ button:hover {
 /* If workspaces is the rightmost module, omit right margin */
 .modules-right > widget:last-child > #workspaces {
   margin-right: 0;
+}
+
+#workspaces button {
+  padding: 0 5px;
+  background-color: transparent;
+  color: #888888;
+}
+
+#workspaces button:hover {
+  background: rgba(0, 100, 100, 0.2);
+}
+
+#workspaces button.active {
+  box-shadow: inset 0 -3px #ffffff;
+}
+
+#workspaces button.empty {
+  background-color: #64727d;
+}
+
+#workspaces button.visible {
+  color: #ffffff;
+}
+
+#workspaces button.persistent {
+  background-color: #ff00ff;
+}
+
+#workspaces button.special {
+  background-color: #00ff00;
+}
+
+#workspaces button.focused {
+  color: #ffff00;
+}
+
+#workspaces button.urgent {
+  color: #ff0000;
 }
 
 #battery {
