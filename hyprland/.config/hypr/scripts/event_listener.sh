@@ -15,7 +15,7 @@ handle_event() {
           if [ $WIDTH -gt 3000 ]; then
               SCALE=1.2
           else
-              SCALE=1.0
+              SCALE=0.8
           fi
           echo hyprctl keyword monitor "$MONITOR",preferred,auto-left,$SCALE
           hyprctl keyword monitor "$MONITOR",preferred,auto-left,$SCALE
