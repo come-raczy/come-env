@@ -84,17 +84,17 @@ I hope you enjoy your Neovim journey,
 P.S. You can delete this when you're done too. It's your config now! :)
 --]]
 
-require "globals"
-require "options"
-require "keymaps"
-require "autocmds"
+require("globals")
+require("options")
+require("keymaps")
+require("autocmds")
 
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
-local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   local lazyrepo = "https://github.com/folke/lazy.nvim.git"
-  vim.fn.system { "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath }
+  vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
@@ -123,17 +123,6 @@ require("lazy").setup({
   --    require('Comment').setup({})
 
   -- "gc" to comment visual regions/lines
-  { import = "kickstart.plugins.Comment" },
-  { import = "kickstart.plugins.gitsigns" }, -- TODO: compare with josean version
-  { import = "kickstart.plugins.which-key" },
-  { import = "kickstart.plugins.telescope" },
-  { import = "kickstart.plugins.nvim-lspconfig" },
-  { import = "kickstart.plugins.conform" },
-  { import = "kickstart.plugins.nvim-cmp" },
-  { import = "kickstart.plugins.tokyonight" },
-  { import = "kickstart.plugins.todo-comments" },
-  { import = "kickstart.plugins.mini" },
-  { import = "kickstart.plugins.nvim-treesitter" },
 
   -- The following two comments only work if you have downloaded the kickstart repo, not just copy pasted the
   -- init.lua. If you want these files, they are in the repository, so you can just download them and
@@ -144,26 +133,37 @@ require("lazy").setup({
   --  Here are some example plugins that I've included in the Kickstart repository.
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
-  require "kickstart.plugins.alpha",
-  require "kickstart.plugins.auto-session",
-  require "kickstart.plugins.autopairs",
-  require "kickstart.plugins.bufferline",
-  require "kickstart.plugins.copilot",
+  require("kickstart.plugins.alpha"),
+  require("kickstart.plugins.auto-session"),
+  require("kickstart.plugins.autopairs"),
+  require("kickstart.plugins.bufferline"),
+  require("kickstart.plugins.Comment"),
+  require("kickstart.plugins.conform"),
+  require("kickstart.plugins.copilot"),
   --require("kickstart.plugins.copilot-cmp"),
-  require "kickstart.plugins.debug",
-  require "kickstart.plugins.dressing",
-  require "kickstart.plugins.formatting",
-  require "kickstart.plugins.hardtime", -- A Neovim plugin helping you establish good command workflow and habit
-  require "kickstart.plugins.indent_line",
-  require "kickstart.plugins.lint",
-  require "kickstart.plugins.lualine",
+  require("kickstart.plugins.debug"),
+  require("kickstart.plugins.dressing"),
+  -- require "kickstart.plugins.formatting",
+  require("kickstart.plugins.gitsigns"), -- TODO: compare with josean version
+  require("kickstart.plugins.hardtime"), -- A Neovim plugin helping you establish good command workflow and habit
+  require("kickstart.plugins.indent_line"),
+  require("kickstart.plugins.lint"),
+  require("kickstart.plugins.lualine"),
+  require("kickstart.plugins.mini"),
   -- require("kickstart.plugins.neo-tree"),
-  require "kickstart.plugins.nvim-tree",
-  require "kickstart.plugins.nvim-treesitter-text-objects",
+  require("kickstart.plugins.nvim-cmp"),
+  require("kickstart.plugins.nvim-lspconfig"),
+  require("kickstart.plugins.nvim-tree"),
+  require("kickstart.plugins.nvim-treesitter"),
+  require("kickstart.plugins.nvim-treesitter-text-objects"),
   -- require("kickstart.plugins.precognition"), -- assists with motions
-  require "kickstart.plugins.substitute",
-  require "kickstart.plugins.trouble",
-  require "kickstart.plugins.vim-maximizer",
+  require("kickstart.plugins.substitute"),
+  require("kickstart.plugins.telescope"),
+  require("kickstart.plugins.todo-comments"),
+  require("kickstart.plugins.tokyonight"),
+  require("kickstart.plugins.trouble"),
+  require("kickstart.plugins.vim-maximizer"),
+  require("kickstart.plugins.which-key"),
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
@@ -194,7 +194,7 @@ require("lazy").setup({
 })
 
 local lastplace = vim.api.nvim_create_augroup("LastPlace", {})
-vim.api.nvim_clear_autocmds { group = lastplace }
+vim.api.nvim_clear_autocmds({ group = lastplace })
 vim.api.nvim_create_autocmd("BufReadPost", {
   group = lastplace,
   pattern = { "*" },

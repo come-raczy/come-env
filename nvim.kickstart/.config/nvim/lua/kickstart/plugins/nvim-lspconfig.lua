@@ -54,7 +54,7 @@ return { -- LSP Configuration & Plugins
             -- "tsserver",
             -- "html",
             -- "cssls",
-            --"tailwindcss",
+            "tailwindcss",
             -- "svelte",
             "lua_ls",
             "graphql",
@@ -164,11 +164,11 @@ return { -- LSP Configuration & Plugins
 
     -- Useful status updates for LSP.
     -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-    { "j-hui/fidget.nvim", opts = {} },
+    { "j-hui/fidget.nvim",                   opts = {} },
 
     -- `neodev` configures Lua LSP for your Neovim config, runtime and plugins
     -- used for completion, annotations and signatures of Neovim apis
-    { "folke/neodev.nvim", opts = {} },
+    { "folke/neodev.nvim",                   opts = {} },
   },
   config = function()
     -- Brief aside: **What is LSP?**
@@ -346,7 +346,7 @@ return { -- LSP Configuration & Plugins
       graphql = {},
       -- html = {},
       htmx = {},
-      java_language_server = {},
+      -- java_language_server = {},
       jsonls = {},
       ltex = {},
       lua_ls = {
@@ -387,7 +387,7 @@ return { -- LSP Configuration & Plugins
       ruff_lsp = {},
       rust_analyzer = {},
       -- svelte = {},
-      --tailwindcss = {},
+      tailwindcss = {},
       terraformls = {},
       tsserver = {},
       -- unocss = {},
