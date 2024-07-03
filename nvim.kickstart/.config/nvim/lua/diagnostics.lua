@@ -27,11 +27,12 @@ M.line_diagnostics = function()
   local lines = {}
 
   for _, diagnostic in ipairs(diagnostics) do
+    local code = diagnostic.code or "nil"
     table.insert(
       lines,
       icon_map[diagnostic.severity]
         .. " "
-        .. diagnostic.code
+        .. code
         .. ": "
         .. diagnostic.message:gsub("\n", " ")
         .. source_string(diagnostic.source)
