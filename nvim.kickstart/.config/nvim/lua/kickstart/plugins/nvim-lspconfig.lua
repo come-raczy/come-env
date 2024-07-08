@@ -102,6 +102,7 @@ return { -- LSP Configuration & Plugins
               capabilities = capabilities,
               filetypes = {
                 "html",
+                "typescript",
                 "typescriptreact",
                 "javascriptreact",
                 "css",
