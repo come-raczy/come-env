@@ -154,7 +154,8 @@ return { -- LSP Configuration & Plugins
             -- "isort", -- python formatter
             -- "black", -- python formatter
             -- "pylint",
-            "eslint_d",
+            "eslint",
+            -- "eslint_d", -- errors: Unknown options: extensions, useEslintrc
           },
         })
       end,
