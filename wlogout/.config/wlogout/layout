@@ -24,7 +24,7 @@
 }
 {
     "label" : "suspend",
-    "action" : "hyprlock & sleep 1 ;  systemctl suspend",
+    "action" : "pidof gtklock || gtklock  & sleep 1 ;  systemctl suspend",
     "text" : "Suspend",
     "keybind" : "u"
 }

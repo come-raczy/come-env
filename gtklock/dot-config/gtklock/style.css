@@ -1,0 +1,10 @@
+window {
+  background-image: url("~/.cache/square_wallpaper.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: black;
+}
+window #input-field {
+  background-color: #505060;
+}
