@@ -153,6 +153,7 @@ require("lazy").setup({
   -- require("kickstart.plugins.neo-tree"),
   require("kickstart.plugins.nvim-cmp"),
   require("kickstart.plugins.nvim-lspconfig"),
+  require("kickstart.plugins.nvim-surround"),
   require("kickstart.plugins.nvim-tree"),
   require("kickstart.plugins.nvim-treesitter"),
   require("kickstart.plugins.nvim-treesitter-text-objects"),
@@ -163,6 +164,7 @@ require("lazy").setup({
   require("kickstart.plugins.tokyonight"),
   require("kickstart.plugins.trouble"),
   require("kickstart.plugins.vim-maximizer"),
+  -- require("kickstart.plugins.vim-sandwich"),
   require("kickstart.plugins.which-key"),
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
