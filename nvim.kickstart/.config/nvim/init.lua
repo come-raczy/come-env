@@ -150,7 +150,7 @@ require("lazy").setup({
   require("kickstart.plugins.lint"),
   require("kickstart.plugins.lualine"),
   require("kickstart.plugins.mini"),
-  -- require("kickstart.plugins.neo-tree"),
+  require("kickstart.plugins.neo-tree"),
   require("kickstart.plugins.nvim-cmp"),
   require("kickstart.plugins.nvim-lspconfig"),
   require("kickstart.plugins.nvim-surround"),
